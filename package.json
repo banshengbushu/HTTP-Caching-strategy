@@ -1,0 +1,22 @@
+{
+  "name": "http-caching-demo",
+  "version": "1.0.0",
+  "description": "test HTTP Caching strategy",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/banshengbushu/HTTP-Caching-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/banshengbushu/HTTP-Caching-demo/issues"
+  },
+  "homepage": "https://github.com/banshengbushu/HTTP-Caching-demo#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
