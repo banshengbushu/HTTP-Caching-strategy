@@ -1,14 +1,17 @@
 var express = require('express');
 var app = express();
 
-app.get('/items', (req, res) => {
-    const result = [{name: 'wang', age: 20, id: '10'}, {name: 'li', age: 20, id: '10'}]
+app.set('etag', false);
 
-    res.setHeader('Cache-Control', 'public, max-age=5');
+app.get('/public/max-age', (req, res) => {
+    const result = { timestamp: Date.now() };
+
+    // res.setHeader('Cache-Control', 'no-cache, max-age=3');
+    res.setHeader('Cache-Control', 'public, max-age=3');
     res.status(200).send(JSON.stringify(result));
 });
 
-app.use('/', express.static('public', { maxAge: 33 }));
+app.use('/', express.static('public', { maxAge: 4 }));
 
 app.listen(8081, () => {
     console.log('Listening on port 8081!');
