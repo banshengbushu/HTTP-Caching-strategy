@@ -10,10 +10,10 @@ module.exports = {
     getOutput() {
         return new Table({
             head: ['id', 'fromCache', 'res content', 'res headers'],
-            colWidths: [10, 15, 30, 100],
+            colWidths: [8, 10, 29, 100],
         });
     },
     getHeader(res) {
-        return JSON.stringify(_.pick(res.headers(), ['cache-control', 'date']));
+        return JSON.stringify(_.pick(res.headers(), ['cache-control', 'date', 'etag']));
     }
 };

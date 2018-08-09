@@ -1,13 +1,12 @@
 var express = require('express');
 var app = express();
 
-app.set('etag', false);
+app.get('/items', (req, res) => {
+    const { body, cacheControl, etag } = req.query;
+    const result = { timestamp: body === 'now'? Date.now(): 1};
 
-app.get('/public/max-age', (req, res) => {
-    const result = { timestamp: Date.now() };
-
-    // res.setHeader('Cache-Control', 'no-cache, max-age=3');
-    res.setHeader('Cache-Control', 'public, max-age=3');
+    app.set('etag', etag === 'true')
+    res.setHeader('Cache-Control', cacheControl);
     res.status(200).send(JSON.stringify(result));
 });
 
