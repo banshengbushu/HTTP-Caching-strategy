@@ -53,6 +53,7 @@ describe('maxAgeWithNoCache', () => {
         await page.goto(url);
         await sleep(2);
         await page.goto(url);
+        await sleep(1);
         console.log(table.toString());
     });
 
@@ -98,6 +99,7 @@ describe('maxAgeWithNoCache', () => {
         await page.goto(url);
         await sleep(2);
         await page.goto(url);
+        await sleep(1);
         console.log(table.toString());
 
     });
@@ -142,6 +144,7 @@ describe('maxAgeWithNoCache', () => {
         await page.goto(url);
         await sleep(2);
         await page.goto(url);
+        await sleep(1);
         console.log(table.toString());
     });
 
@@ -186,6 +189,7 @@ describe('maxAgeWithNoCache', () => {
         await page.goto(url);
         await sleep(2);
         await page.goto(url);
+        await sleep(1);
         console.log(table.toString());
     });
 
@@ -230,6 +234,7 @@ describe('maxAgeWithNoCache', () => {
         await page.goto(url);
         await sleep(2);
         await page.goto(url);
+        await sleep(1);
         console.log(table.toString());
     });
 
@@ -274,6 +279,7 @@ describe('maxAgeWithNoCache', () => {
         await page.goto(url);
         await sleep(2);
         await page.goto(url);
+        await sleep(1);
         console.log(table.toString());
     });
 
@@ -308,7 +314,7 @@ describe('maxAgeWithNoCache', () => {
 
             if(responseTime === 3) {            //4s
                 expect(isCached).toBe(false);
-                expect(status).toBe(304);
+                expect(status).toBe(200);
             }
         });
 
@@ -317,6 +323,7 @@ describe('maxAgeWithNoCache', () => {
         await page.goto(url);
         await sleep(2);
         await page.goto(url);
+        await sleep(1);
         console.log(table.toString());
     });
 
